@@ -7,7 +7,7 @@ $action = $_GET["action"]; //
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 //define("BASE_URL", 'http://'.$_SERVER["db_a_pedido"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 
-$controller = new ComidasControlador();
+$controller = new ComidasControlador(); //instancio al controlador de comidas
 
 if($action == ''){
     $controller->getComidas(); //hacer el home (getHome)
@@ -16,7 +16,9 @@ if($action == ''){
         $partesURL = explode("/", $action);
 
         if($partesURL[0] == "comidas"){
-            $controller->getComidas();
+            $controller->getComidas(); //busca la funcion getComidas en el controlador
+       
+       
         }
         
         // elseif($partesURL[0] == "insertar") {

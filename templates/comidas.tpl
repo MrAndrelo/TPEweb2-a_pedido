@@ -1,3 +1,8 @@
+<style>
+   {include file="./style.css"}
+</style>
+
+
 <h1>
     {{$primertitulo}}
 </h1>

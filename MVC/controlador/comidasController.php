@@ -14,13 +14,9 @@ class ComidasControlador {
 
     
 
-
-    
-
-
     public function getComidas(){
        
-        $comidas = $this->comidasModel->getComidas();
+        $comidas = $this->comidasModel->getComidas(); //variable con el arreglo de comidas
       //  var_dump ($comidas[1].nombre);
        // echo $comidas[1].nombre;
        //echo $comidas[1]->nombre;
