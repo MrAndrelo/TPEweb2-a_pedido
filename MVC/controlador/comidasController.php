@@ -26,4 +26,29 @@ class ComidasControlador {
        $this->comidasView->mostrarComidas($comidas,$titulo);
     }	
 
-}?>
+    public function insertarComida(){
+        $nombre = $_POST ['nombre'];
+        if (!empty($nombre)){
+            $this->comidasModel->insertarComida($nombre);
+            header('Location: ' . HOME );
+        }else{
+            $this->comidasView->showError("no se ha ingresado una categoría");
+        }   
+    }
+    
+    public function editarComida(){
+        $id = $_GET ['$comida->id_comida'];
+        $this->comidasModel->EditarComida($id);
+        header('Location: ' . HOME );
+         
+    }
+    
+    public function deleteComidas(){
+        $id = $_GET ['$comida->id_comida'];
+        $this->comidasModel->BorrarComida($id);
+        header('Location: ' . HOME );
+    }
+    
+
+}
+?>

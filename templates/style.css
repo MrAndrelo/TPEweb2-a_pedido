@@ -1,2 +1,12 @@
-* {
+body {
     background-color: tan    }
+
+button.delete {
+    background-color: brown;
+    color:white;
+}
+
+button.edit {
+    background-color: rgb(85, 137, 197);
+    
+}

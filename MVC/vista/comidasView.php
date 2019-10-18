@@ -13,8 +13,12 @@
         
         }	
 
+        public function getCategoriaNueva($comidas){
+         
+            $smarty = new Smarty();
+            $smarty->assign('comidas',$comidas);
+            $smarty->display('../templates/comidas.tpl');
+        
+         }
     }
-
-
-
-    ?>
+?>
