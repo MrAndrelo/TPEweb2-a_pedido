@@ -27,25 +27,34 @@ class ComidasControlador {
     }	
 
     public function insertarComida(){
+        
         $nombre = $_POST ['nombre'];
         if (!empty($nombre)){
+             echo 'sipi' . $nombre . '';
             $this->comidasModel->insertarComida($nombre);
             header('Location: ' . HOME );
         }else{
-            $this->comidasView->showError("no se ha ingresado una categoría");
+             
+            echo '<script>alert("no se ha ingresado una categoría")</script>';
+
+             //$this->comidasView->showError("no se ha ingresado una categoría");
         }   
     }
     
-    public function editarComida(){
-        $id = $_GET ['$comida->id_comida'];
-        $this->comidasModel->EditarComida($id);
+    public function editarComida($params = null){
+        $id = $params[':ID_COMIDA'];
+        $nombre = $_POST ['nombre'];
+        if (!empty($nombre)){
+        $this->comidasModel->editarComida($id, $nombre);
         header('Location: ' . HOME );
-         
+        }else{  
+            echo '<script>alert("no se ha ingresado una categoría")</script>'; 
+        }
     }
     
-    public function deleteComidas(){
-        $id = $_GET ['$comida->id_comida'];
-        $this->comidasModel->BorrarComida($id);
+    public function borrarComida($params = null) {
+        $id = $params[':ID_COMIDA'];
+        $this->comidasModel->borrarComida($id);
         header('Location: ' . HOME );
     }
     

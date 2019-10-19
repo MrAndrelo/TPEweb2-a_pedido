@@ -2,7 +2,7 @@
 require_once("./modelo/.modelo.php");
 require_once("./api/json.view.php");
 
-class TaskApiController {
+class comidasApiController {
 
     private $model;
     private $view;

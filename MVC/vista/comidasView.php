@@ -20,5 +20,7 @@
             $smarty->display('../templates/comidas.tpl');
         
          }
+
+        
     }
 ?>

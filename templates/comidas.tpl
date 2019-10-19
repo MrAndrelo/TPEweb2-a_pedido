@@ -8,6 +8,9 @@
 </div>
 
 
+</div>
+
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -17,16 +20,48 @@
   </thead>
   <tbody>
     <tr>
-        <form action="insertar" method="POST">
+        <form action="comida/insertar" method="POST">
             <td><form action="insertar" method="POST"><input name="nombre" class="form-control" placeholder="Ingrese nueva comida"/></td>
             <td><button type="submit" class="btn btn-primary">AGREGAR</button></td>
         </form>
     </tr>
 {foreach from=$comidas item=comida}
     <tr>
+
         <td scope="row"> {$comida->nombre}</td>
-        <td><a class="btn btn-light" href="editar/{$comida->id_comida}" method="GET" class="edit">EDITAR<a class="btn btn-secondary" href='<? BorrarComida({$comida->id_comida}) style type= button ?>'>X</a></td>
+
+       
+
+
+        <td><form action="editarComida/{$comida->id_comida}" method="POST"><button type="submit" class="btn btn-light">EDITAR</button>
+        
+        <a class="btn btn-secondary" href="borrarComida/{$comida->id_comida}" type="button">X</a>
+        </td>
     </tr>
+
+
+
+{* 
+<ul>
+    {foreach from=$comidas item=comida}
+        <li> {$comida->nombre}  
+        </li>
+
+        <a href="borrarComida/{$comida->id_comida}">borrar</a>
+        {* <a href="editarComida/{$comida->id_comida}">editar</a> 
+        <form action="editarComida/{$comida->id_comida}" method="POST">
+        <input name="nombre" placeholder="editar Comida"/>
+        <input type="submit" value="Enviar"/>
+        {* </if $UserAdmin>
+        </form> 
+*}
+
+
+
+
+
+
+        
     {/foreach}
   </tbody>
 </table>
