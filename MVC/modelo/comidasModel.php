@@ -39,18 +39,20 @@ class ComidasModel {
         echo $html;
     }
 
-    function insertarComida($nombre){
+    public function insertarComida($nombre){
+        
         $sentencia = $this->db->prepare('INSERT INTO comida(nombre) VALUES(?)');
         $sentencia->execute(array($nombre));
+        
     }
 
-    function EditarComida($id_comida){
-        $sentencia =  $this->db->prepare('UPDATE comida SET finalizada=1 WHERE id=?');
-        $sentencia->execute(array($id_comida));
+    public function editarComida($id_comida,$nombre){
+        $sentencia =  $this->db->prepare('UPDATE comida SET nombre=? WHERE id_comida=?');
+        $sentencia->execute(array($nombre, $id_comida));
     }
 
-    function BorrarComida($id_comida){
-        $sentencia = $this->db->prepare('DELETE FROM comida WHERE id=?');
+    public function borrarComida($id_comida){
+        $sentencia = $this->db->prepare('DELETE FROM comida WHERE id_comida=?');
         $sentencia->execute(array($id_comida));
     }
 }

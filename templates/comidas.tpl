@@ -13,16 +13,21 @@
     {foreach from=$comidas item=comida}
         <li> {$comida->nombre}  
         </li>
-        <button a href='<? BorrarComida({$comida->id_comida}) style type= button ?>'>BORRAR</a></button>
-        {* <button <a href="borrar/{$comida->id_comida}" method="DELETE" class="delete">BORRAR</button> *}
-        <button <a href="editar/{$comida->id_comida}" method="GET" class="edit">EDITAR</button>
+        {* <if $UserAdmin> *}
+        <a href="borrarComida/{$comida->id_comida}">borrar</a>
+        {* <a href="editarComida/{$comida->id_comida}">editar</a> *}
+        <form action="editarComida/{$comida->id_comida}" method="POST">
+        <input name="nombre" placeholder="editar Comida"/>
+        <input type="submit" value="Enviar"/>
+        {* </if $UserAdmin> *}
+</form>
         
     {/foreach}
 </ul>
 
 
 
-<form action="insertar" method="POST">
+<form action="comida/insertar" method="POST">
   <input name="nombre" placeholder="Ingrese la comida"/>
   <input type="submit" value="Enviar"/>
 </form>
