@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-22 05:47:02
+/* Smarty version 3.1.33, created on 2019-10-22 05:52:25
   from 'C:\xampp\htdocs\TPEweb2-a_pedido\templates\comidas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dae7bb69dc035_06576871',
+  'unifunc' => 'content_5dae7cf913bff1_21236425',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '00d7c1da17b4afa7508875aa0c4593f441fd3d10' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPEweb2-a_pedido\\templates\\comidas.tpl',
-      1 => 1571716020,
+      1 => 1571716337,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dae7bb69dc035_06576871 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dae7cf913bff1_21236425 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -67,13 +67,13 @@ foreach ($_from as $_smarty_tpl->tpl_vars['comida']->value) {
 
                 <?php if ($_smarty_tpl->tpl_vars['comida']->value) {?> 
                 <input name="nombre" class="form-control" value=<?php echo $_smarty_tpl->tpl_vars['comida']->value->nombre;?>
-/>
+>
                 
                 <?php }?>
             
             </td>
         
-         <?php if ($_smarty_tpl->tpl_vars['comida']->value) {?>
+         <?php if ($_smarty_tpl->tpl_vars['editar']->value) {?>
             <td scope="row"> <?php echo $_smarty_tpl->tpl_vars['comida']->value->nombre;?>
 </td>
         <?php }?>
