@@ -27,10 +27,19 @@
     </tr>
 {foreach from=$comidas item=comida}
     <tr>
-
-        <td scope="row"> {$comida->nombre}</td>
-
-       
+        
+            <td scope="row"> 
+                {$comida->nombre}
+                {if $editar} 
+                <input name="nombre" class="form-control" value={$comida->nombre}/>
+                
+                {/if}
+            
+            </td>
+        
+         {if $editar}
+            <td scope="row"> {$comida->nombre}</td>
+        {/if}
 
 
         <td><form action="editarComida/{$comida->id_comida}" method="POST"><button type="submit" class="btn btn-light">EDITAR</button>
