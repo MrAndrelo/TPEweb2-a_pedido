@@ -73,7 +73,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['comida']->value) {
             
             </td>
         
-         <?php if ($_smarty_tpl->tpl_vars['editar']->value) {?>
+         <?php if ($_smarty_tpl->tpl_vars['comida']->value) {?>
             <td scope="row"> <?php echo $_smarty_tpl->tpl_vars['comida']->value->nombre;?>
 </td>
         <?php }?>
