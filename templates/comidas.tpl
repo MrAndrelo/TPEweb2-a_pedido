@@ -1,9 +1,10 @@
 {include 'templates/header.tpl'}
 
+
 <body class="container">
 <div>
 <h1 class="text-center">
-    {{$primertitulo}}
+    {$primertitulo}
 </h1>
 </div>
 
@@ -30,16 +31,17 @@
         
             <td scope="row"> 
                 {$comida->nombre}
-                {if $editar} 
-                <input name="nombre" class="form-control" value={$comida->nombre}/>
+                {* {if $editar}  *}
+                {* <input name="nombre" class="form-control" value="{$comida->nombre}"/> *}
+                <input name="nombre" class="form-control"/>
                 
-                {/if}
+                {* {/if} *}
             
             </td>
         
-         {if $editar}
-            <td scope="row"> {$comida->nombre}</td>
-        {/if}
+         {* {if $editar} *}
+            {* <td scope="row"> {$comida->nombre}</td> *}
+        {* {/if} *}
 
 
         <td><form action="editarComida/{$comida->id_comida}" method="POST"><button type="submit" class="btn btn-light">EDITAR</button>

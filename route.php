@@ -1,5 +1,6 @@
 <?php
-require_once "./MVC/controlador/comidasController.php"; //importa el archivo que tiene la clase que vamos a usar
+require_once "./MVC/controlador/comidasController.php";
+require_once "./MVC/controlador/userController.php"; //importa el archivo que tiene la clase que vamos a usar
 require_once "Router.php";
 
 $action = $_GET["action"]; //
@@ -7,6 +8,7 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
 //define("BASE_URL", 'http://'.$_SERVER["db_a_pedido"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 
 define("HOME", BASE_URL . 'comidas');
+define("LOGIN", BASE_URL . 'comidas');
 
 $r = new Router();
 
@@ -19,7 +21,9 @@ $r->addRoute("comidas", "GET", "ComidasControlador", "getComidas");
 $r->addRoute("editarComida/:ID_COMIDA", "POST", "ComidasControlador", "editarComida");
 $r->addRoute("borrarComida/:ID_COMIDA", "GET", "ComidasControlador", "borrarComida");
 $r->addRoute("comida/insertar", "POST", "ComidasControlador", "insertarComida");
-$r->addRoute("","GET", "ComidasControlador","getComidas");
+$r->addRoute("a","GET", "ComidasControlador","getComidas");
+$r->addRoute("login","POST","LoginController","verifyUser");
+$r->addRoute("login","GET","LoginController","showLogin");
 
 // //Ruta por defecto.
 // $r->setDefaultRoute("comidasControlador", "getComidas");
