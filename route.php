@@ -1,5 +1,6 @@
 <?php
 require_once "./MVC/controlador/comidasController.php";
+require_once "./MVC/controlador/variedadController.php";
 require_once "./MVC/controlador/userController.php"; //importa el archivo que tiene la clase que vamos a usar
 require_once "Router.php";
 
@@ -8,7 +9,7 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
 //define("BASE_URL", 'http://'.$_SERVER["db_a_pedido"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 
 define("HOME", BASE_URL . 'comidas');
-define("LOGIN", BASE_URL . 'comidas');
+define("variedad", BASE_URL . 'variedad');
 
 $r = new Router();
 
@@ -16,17 +17,20 @@ $r = new Router();
 // rutas
 // $r->addRoute("login", "GET", "LoginController", "showLogin");
 // $r->addRoute("verify", "POST", "LoginController", "verifyUser");
-// $r->addRoute("logout", "GET", "LoginController", "logout");
+$r->addRoute("logout", "GET", "LoginController", "logout");
 $r->addRoute("comidas", "GET", "ComidasControlador", "getComidas");
 $r->addRoute("editarComida/:ID_COMIDA", "POST", "ComidasControlador", "editarComida");
 $r->addRoute("borrarComida/:ID_COMIDA", "GET", "ComidasControlador", "borrarComida");
 $r->addRoute("comida/insertar", "POST", "ComidasControlador", "insertarComida");
-$r->addRoute("a","GET", "ComidasControlador","getComidas");
 $r->addRoute("login","POST","LoginController","verifyUser");
 $r->addRoute("login","GET","LoginController","showLogin");
+$r->addRoute("variedad", "GET", "variedadControlador", "getVariedad");
+$r->addRoute("editarVariedad/:ID_VARIEDAD", "POST", "variedadControlador", "editarVariedad");
+$r->addRoute("borrarVariedad/:ID_VARIEDAD", "GET", "variedadControlador", "borrarVariedad");
+$r->addRoute("variedad/insertar", "POST", "variedadControlador", "insertarVariedad");
 
 // //Ruta por defecto.
-// $r->setDefaultRoute("comidasControlador", "getComidas");
+$r->setDefaultRoute("comidasControlador", "getComidas");
 
 //run
 $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']);

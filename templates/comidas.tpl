@@ -32,8 +32,7 @@
             <td scope="row"> 
                 {$comida->nombre}
                 {* {if $editar}  *}
-                {* <input name="nombre" class="form-control" value="{$comida->nombre}"/> *}
-                <input name="nombre" class="form-control"/>
+                {* <input name="nombre" class="form-control"/> *}
                 
                 {* {/if} *}
             
@@ -44,12 +43,18 @@
         {* {/if} *}
 
 
-        <td><form action="editarComida/{$comida->id_comida}" method="POST"><button type="submit" class="btn btn-light">EDITAR</button>
-        
-        <a class="btn btn-secondary" href="borrarComida/{$comida->id_comida}" type="button">X</a>
+        <td>
+          <form action="editarComida/{$comida->id_comida}" method="POST">
+            
+            <input name="nombre" class="form-control" value="{$comida->nombre}"/>
+            <button type="submit" class="btn btn-light">EDITAR</button>
+          </form>
+          <a class="btn btn-secondary" href="borrarComida/{$comida->id_comida}" type="button">X</a>
+          
         </td>
     </tr>
 
+    {/foreach}
 
 
 {* 
@@ -73,7 +78,7 @@
 
 
         
-    {/foreach}
+
   </tbody>
 </table>
 </body>

@@ -23,6 +23,7 @@ class ComidasControlador {
        //llamar a la  instancia de la vista y llamar a una metodo mostrar y pasarle como parametro la variable comidas que es un arreglo,
        //la funcion mostrar despues de va a conectar con smarty para mostrar todas las comidas en un html 
        $titulo='CATEGORIA COMIDAS';
+       
        $this->comidasView->mostrarComidas($comidas,$titulo);
     }	
 

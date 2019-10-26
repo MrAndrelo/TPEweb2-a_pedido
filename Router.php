@@ -8,11 +8,13 @@ class Route {
     private $params;
 
     public function __construct($url, $verb, $controller, $method){
+        
         $this->url = $url;
         $this->verb = $verb;
         $this->controller = $controller;
         $this->method = $method;
         $this->params = [];
+
     }
     public function match($url, $verb) {
         if($this->verb != $verb){
@@ -66,7 +68,9 @@ class Router {
     }
     
     public function addRoute ($url, $verb, $controller, $method) {
+
         $this->routeTable[] = new Route($url, $verb, $controller, $method);
+        
     }
 
     public function setDefaultRoute($controller, $method) {

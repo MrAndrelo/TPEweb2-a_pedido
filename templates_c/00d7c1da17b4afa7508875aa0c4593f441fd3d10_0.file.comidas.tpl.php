@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-25 22:55:19
+/* Smarty version 3.1.33, created on 2019-10-27 00:38:50
   from 'C:\xampp\htdocs\TPEweb2-a_pedido\templates\comidas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db36137c9ef71_59302626',
+  'unifunc' => 'content_5db4cafa0d56d1_37756505',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '00d7c1da17b4afa7508875aa0c4593f441fd3d10' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPEweb2-a_pedido\\templates\\comidas.tpl',
-      1 => 1572036916,
+      1 => 1572129523,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db36137c9ef71_59302626 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db4cafa0d56d1_37756505 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -63,34 +63,40 @@ foreach ($_from as $_smarty_tpl->tpl_vars['comida']->value) {
             <td scope="row"> 
                 <?php echo $_smarty_tpl->tpl_vars['comida']->value->nombre;?>
 
-                                                <input name="nombre" class="form-control"/>
-                
+                                                
                             
             </td>
         
                              
 
-        <td><form action="editarComida/<?php echo $_smarty_tpl->tpl_vars['comida']->value->id_comida;?>
-" method="POST"><button type="submit" class="btn btn-light">EDITAR</button>
-        
-        <a class="btn btn-secondary" href="borrarComida/<?php echo $_smarty_tpl->tpl_vars['comida']->value->id_comida;?>
+        <td>
+          <form action="editarComida/<?php echo $_smarty_tpl->tpl_vars['comida']->value->id_comida;?>
+" method="POST">
+            
+            <input name="nombre" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['comida']->value->nombre;?>
+"/>
+            <button type="submit" class="btn btn-light">EDITAR</button>
+          </form>
+          <a class="btn btn-secondary" href="borrarComida/<?php echo $_smarty_tpl->tpl_vars['comida']->value->id_comida;?>
 " type="button">X</a>
+          
         </td>
     </tr>
 
-
-
-
-
-
-
-
-
-        
     <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+
+
+
+
+
+
+
+        
+
   </tbody>
 </table>
 </body>
