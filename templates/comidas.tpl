@@ -49,7 +49,7 @@
             <input name="nombre" class="form-control" value="{$comida->nombre}"/>
             <button type="submit" class="btn btn-light">EDITAR</button>
           </form>
-          <a class="btn btn-secondary" href="borrarComida/{$comida->id_comida}" type="button">X</a>
+          <a class="btn btn-secondary" href="borrarComida/{$comida->id_comida}">X</a>
           
         </td>
     </tr>
