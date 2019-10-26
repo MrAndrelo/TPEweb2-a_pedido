@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2019 a las 01:15:23
+-- Tiempo de generación: 27-10-2019 a las 01:03:27
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -38,9 +38,29 @@ CREATE TABLE `comida` (
 --
 
 INSERT INTO `comida` (`id_comida`, `nombre`) VALUES
-(1, 'milanesas'),
-(2, 'empanadas'),
-(3, 'pizzas');
+(2, 'jjj'),
+(35, 'hhhhhhh');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id_usuario` int(30) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `mail` varchar(60) NOT NULL,
+  `contraseña` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `mail`, `contraseña`) VALUES
+(0, '', '', ''),
+(2, 'andres', 'mr.andrelo60@gmail.com', 'pedrito');
 
 -- --------------------------------------------------------
 
@@ -51,15 +71,16 @@ INSERT INTO `comida` (`id_comida`, `nombre`) VALUES
 CREATE TABLE `variedad` (
   `id_variedad` int(11) NOT NULL,
   `id_comida` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL
+  `nombre` varchar(100) NOT NULL,
+  `ingredientes` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `variedad`
 --
 
-INSERT INTO `variedad` (`id_variedad`, `id_comida`, `nombre`) VALUES
-(1, 2, 'carne');
+INSERT INTO `variedad` (`id_variedad`, `id_comida`, `nombre`, `ingredientes`) VALUES
+(1, 2, 'carne', '');
 
 --
 -- Índices para tablas volcadas
@@ -70,6 +91,12 @@ INSERT INTO `variedad` (`id_variedad`, `id_comida`, `nombre`) VALUES
 --
 ALTER TABLE `comida`
   ADD PRIMARY KEY (`id_comida`);
+
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id_usuario`);
 
 --
 -- Indices de la tabla `variedad`
@@ -86,7 +113,13 @@ ALTER TABLE `variedad`
 -- AUTO_INCREMENT de la tabla `comida`
 --
 ALTER TABLE `comida`
-  MODIFY `id_comida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_comida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id_usuario` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `variedad`
