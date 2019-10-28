@@ -17,4 +17,22 @@ class UserModel {
         return $query->fetch(PDO::FETCH_OBJ);
     }
 
+
+   
+
+
+    public function signUpUser($nombre,$password) {
+
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $sentencia = $this->db->prepare('INSERT INTO usuario(nombre,contraseña) VALUES(?,?)');
+        $sentencia->execute(array($nombre,$hash));
+
+       
+    }
+
+
+    
+
+   
+
 }

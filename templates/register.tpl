@@ -30,12 +30,10 @@
             {$error}
         </div>
         {/if}
-        <button type="submit" class="btn btn-primary">Ingresar</button>
+        <button type="submit" class="btn btn-primary">Registrarse</button>
 
        
-            <p>¿No tenés cuenta?</p>
             
-            <a class="btn btn-primary" href="register">Registrarse</a>
          
     </form>
 

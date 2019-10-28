@@ -5,37 +5,56 @@ include_once('./helpers/authHelper.php');
 
 class LoginController {
 
-    private $view;
-    private $model;
+    private $loginView;
+    private $userModel;
     private $authHelper;
 
     public function __construct() {
-        $this->view = new LoginView();
-        $this->model = new UserModel();
+        $this->loginView = new LoginView();
+        $this->userModel = new UserModel();
         $this->authHelper = new AuthHelper();
     }
 
     public function showLogin() {
-        $this->view->showLogin();
+        $this->loginView->showLogin();
     }
+
+
+    public function showRegister() {
+        $this->loginView->showRegister();
+    }
+
 
     public function verifyUser() {
         $username = $_POST['username'];
         $password = $_POST['password'];
-
-        $user = $this->model->getByUsername($username);
-        // $hash = password_hash($password, PASSWORD_DEFAULT);
+        $user = $this->userModel->getByUsername($username);
+        //$hash = password_hash($password, md5);
 
         
         // encontró un user con el username que mandó, y tiene la misma contraseña
-        if (!empty($user) && password_verify($password, password_hash($user->contraseña,PASSWORD_BCRYPT))) {
+        if (!empty($user) && password_verify($password,$user->contraseña)) {//NO COMPARA BIEN LAS CONTRASEÑAS
             $this->authHelper->login($user);
 
             header('Location:'. HOME);
         } else {
-            $this->view->showLogin("Login incorrecto");
+            echo $password;
+            echo $user->nombre;
+            $this->loginView->showLogin("Login incorrecto");
         }
     }
+
+
+    public function signUpUser() {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        //controlar que el usuario no exista
+        $this->userModel->signUpUser($username,$password); 
+        header('Location:'. LOGIN);
+
+    }
+
+
 
     public function logout() {
         $this->authHelper->logout();

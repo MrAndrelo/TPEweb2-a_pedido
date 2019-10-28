@@ -10,6 +10,8 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
 
 define("HOME", BASE_URL . 'comidas');
 define("variedad", BASE_URL . 'variedad');
+define("LOGIN", BASE_URL . 'login');
+
 
 $r = new Router();
 
@@ -24,6 +26,8 @@ $r->addRoute("borrarComida/:ID_COMIDA", "GET", "ComidasControlador", "borrarComi
 $r->addRoute("comida/insertar", "POST", "ComidasControlador", "insertarComida");
 $r->addRoute("login","POST","LoginController","verifyUser");
 $r->addRoute("login","GET","LoginController","showLogin");
+$r->addRoute("register","POST","LoginController","signUpUser");
+$r->addRoute("register","GET","LoginController","showRegister");
 $r->addRoute("variedad", "GET", "variedadControlador", "getVariedad");
 $r->addRoute("editarVariedad/:ID_VARIEDAD", "POST", "variedadControlador", "editarVariedad");
 $r->addRoute("borrarVariedad/:ID_VARIEDAD", "GET", "variedadControlador", "borrarVariedad");
