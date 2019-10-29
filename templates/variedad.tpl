@@ -1,6 +1,6 @@
 {include 'templates/header.tpl'}
 
-<body class="container">
+
 <div>
 <h1 class="text-center">
    {$segundotitulo}

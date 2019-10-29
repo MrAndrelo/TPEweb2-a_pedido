@@ -1,7 +1,7 @@
 {include 'templates/header.tpl'}
 
 
-<body class="container">
+
 <div>
 <h1 class="text-center">
     {$primertitulo}
@@ -47,7 +47,7 @@
           <form action="editarComida/{$comida->id_comida}" method="POST">
             
             <input name="nombre" class="form-control" value="{$comida->nombre}"/>
-            <button type="submit" class="btn btn-light">EDITAR</button>
+            <button type="submit" class="btn btn-light">MODIFICAR</button>
           </form>
           <a class="btn btn-secondary" href="borrarComida/{$comida->id_comida}">X</a>
           

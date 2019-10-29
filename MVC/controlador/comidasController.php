@@ -2,6 +2,7 @@
 
 require_once "MVC/modelo/comidasModel.php";
 require_once "MVC/vista/comidasView.php";
+require_once "MVC/vista/homeView.php";
 
 class ComidasControlador {
     private $comidasModel;
@@ -12,7 +13,14 @@ class ComidasControlador {
                 $this->comidasView = new ComidasView ();
                }
 
-    
+    public function showHome(){
+        
+        //$homeView = new HomeView ();
+
+        $this->comidasView->showHome();
+    }
+
+
 
     public function getComidas(){
        

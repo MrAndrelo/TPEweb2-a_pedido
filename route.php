@@ -8,9 +8,8 @@ $action = $_GET["action"]; //
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 //define("BASE_URL", 'http://'.$_SERVER["db_a_pedido"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 
-define("HOME", BASE_URL . 'comidas');
-define("variedad", BASE_URL . 'variedad');
-define("LOGIN", BASE_URL . 'login');
+define("HOME", BASE_URL . '');
+
 
 
 $r = new Router();
@@ -34,7 +33,7 @@ $r->addRoute("borrarVariedad/:ID_VARIEDAD", "GET", "variedadControlador", "borra
 $r->addRoute("variedad/insertar", "POST", "variedadControlador", "insertarVariedad");
 
 // //Ruta por defecto.
-$r->setDefaultRoute("comidasControlador", "getComidas");
+$r->setDefaultRoute("comidasControlador", "showHome");
 
 //run
 $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']);
