@@ -5,8 +5,8 @@ class AuthHelper {
     public function login($user) {
         // INICIO LA SESSION Y LOGUEO AL USUARIO
         session_start();
-        $_SESSION['ID_USUARIO'] = $user->id;
-        $_SESSION['NOMBRE'] = $user->username;
+        $_SESSION['USER_ID'] = $user->id_usuario;
+        $_SESSION['USER_NAME'] = $user->nombre;
     }
 
     public function logout() {
@@ -16,7 +16,7 @@ class AuthHelper {
 
     public function checkLoggedIn() {
         session_start();
-        if (!isset($_SESSION['ID_USUARIO'])) {
+        if (!isset($_SESSION['USER_NAME'])) {
             header('Location: ' . LOGIN);
             die();
         }       
@@ -25,6 +25,6 @@ class AuthHelper {
     public function getLoggedUserName() {
         if (session_status() != PHP_SESSION_ACTIVE)
             session_start();
-        return $_SESSION['NOMBRE'];
+        return $_SESSION['USER_NAME'];
     }
 }

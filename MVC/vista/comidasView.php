@@ -16,7 +16,7 @@
 
 
         public function mostrarComidas($comidas,$titulo){
-         
+            session_start();
             $smarty = new Smarty();
             $smarty->assign('primertitulo',$titulo);
             $smarty->assign('comidas',$comidas);

@@ -38,8 +38,11 @@ class LoginController {
         // encontró un user con el username que mandó, y tiene la misma contraseña
         if (!empty($user) && password_verify($password,$user->contraseña)) {//NO COMPARA BIEN LAS CONTRASEÑAS
             $this->authHelper->login($user);
-
-            header('Location:'. HOME);
+            session_start();
+            //$_SESSION('USER_ID') = $user->id_usuario;
+            $_SESSION['USER_NAME'] = $user->nombre;
+            
+            header('Location:'. COMIDA);
         } else {
             echo $password;
             echo $user->nombre;
