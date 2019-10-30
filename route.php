@@ -9,6 +9,8 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
 //define("BASE_URL", 'http://'.$_SERVER["db_a_pedido"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 
 define("HOME", BASE_URL . '');
+define("VARIEDAD", BASE_URL . 'variedad');
+define("COMIDA", BASE_URL . 'comida');
 
 
 
@@ -18,19 +20,28 @@ $r = new Router();
 // rutas
 // $r->addRoute("login", "GET", "LoginController", "showLogin");
 // $r->addRoute("verify", "POST", "LoginController", "verifyUser");
-$r->addRoute("logout", "GET", "LoginController", "logout");
+//comidas
 $r->addRoute("comidas", "GET", "ComidasControlador", "getComidas");
-$r->addRoute("editarComida/:ID_COMIDA", "POST", "ComidasControlador", "editarComida");
-$r->addRoute("borrarComida/:ID_COMIDA", "GET", "ComidasControlador", "borrarComida");
+$r->addRoute("comida/editar/:ID_COMIDA", "POST", "ComidasControlador", "editarComida");
+$r->addRoute("comida/editar/:ID_COMIDA", "GET", "ComidasControlador", "showEditarComida");
+$r->addRoute("comida/borrar/:ID_COMIDA", "GET", "ComidasControlador", "borrarComida");
 $r->addRoute("comida/insertar", "POST", "ComidasControlador", "insertarComida");
+$r->addRoute("addComida/insertar", "POST", "ComidasControlador", "insertarComida");
+$r->addRoute("addComida", "GET", "ComidasControlador", "ShowAddComida");
+//usuario
+$r->addRoute("logout", "GET", "LoginController", "logout");
 $r->addRoute("login","POST","LoginController","verifyUser");
 $r->addRoute("login","GET","LoginController","showLogin");
 $r->addRoute("register","POST","LoginController","signUpUser");
 $r->addRoute("register","GET","LoginController","showRegister");
-$r->addRoute("variedad", "GET", "variedadControlador", "getVariedad");
-$r->addRoute("editarVariedad/:ID_VARIEDAD", "POST", "variedadControlador", "editarVariedad");
-$r->addRoute("borrarVariedad/:ID_VARIEDAD", "GET", "variedadControlador", "borrarVariedad");
+//variedades
+$r->addRoute("variedad", "GET", "variedadControlador", "getVariedades");
+$r->addRoute("variedad/editar/:ID_VARIEDAD", "GET", "variedadControlador", "showEditarVariedad");
+$r->addRoute("variedad/editar/:ID_VARIEDAD", "POST", "variedadControlador", "editarVariedad");
+$r->addRoute("variedad/borrar/:ID_VARIEDAD", "GET", "variedadControlador", "borrarVariedad");
+$r->addRoute("variedad/insertar", "GET", "variedadControlador", "ShowAddVariedad");
 $r->addRoute("variedad/insertar", "POST", "variedadControlador", "insertarVariedad");
+
 
 // //Ruta por defecto.
 $r->setDefaultRoute("comidasControlador", "showHome");

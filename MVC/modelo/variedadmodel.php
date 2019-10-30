@@ -15,8 +15,14 @@ function connect(){
     return $db;
 }
 
+public function getVariedad($id_variedad){
+    $query = $this->db->prepare( 'SELECT * FROM variedad WHERE id_variedad=?'); //preparo la consulta
+    $query->execute(array($id_variedad)); //ejecuto consulta
+    $variedad = $query->fetch(PDO::FETCH_OBJ); //me da la respuesta
+    return $variedad;
+}	
 
-public function getvariedad(){
+public function getVariedades(){
     $db_connection=$this->connect();
     $query = $db_connection ->prepare( 'SELECT * FROM variedad'); //preparo la consulta
     $ok = $query->execute(); //ejecuto consulta
@@ -38,17 +44,17 @@ function mostrarVariedad() {
     echo $html;
 }
 
-public function insertarVariedad($nombre, $ingredientes){
+public function insertarVariedad($id_comida,$nombre, $ingredientes){
     
-    $sentencia = $this->db->prepare('INSERT INTO variedad(nombre) VALUES(?)');
-    $sentencia = $this->db->prepare('INSERT INTO variedad(ingredientes) VALUES(?)');
-    $sentencia->execute(array($nombre, $ingredientes));
+    $sentencia = $this->db->prepare('INSERT INTO variedad(id_comida, nombre, ingredientes) VALUES(?,?,?)');
+  
+    $sentencia->execute(array($id_comida, $nombre, $ingredientes));
     
 }
 
-public function editarVariedad($id_variedad,$nombre, $ingredientes){
-    $sentencia =  $this->db->prepare('UPDATE variedad SET nombre=? SET ingredientes=? WHERE id_variedad=?');
-    $sentencia->execute(array($nombre,$ingredientes, $id_variedad ));
+public function editarVariedad($id_variedad,$id_comida,$nombre, $ingredientes ){
+    $sentencia =  $this->db->prepare('UPDATE variedad SET id_comida=? ,nombre=? ,ingredientes=?   WHERE id_variedad=?');
+    $sentencia->execute(array($id_comida,$nombre,$ingredientes,$id_variedad ));
 }
 
 public function borrarVariedad($id_variedad){

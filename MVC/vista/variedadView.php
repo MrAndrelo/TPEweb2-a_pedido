@@ -2,10 +2,10 @@
         require_once('libs/Smarty.class.php');
         class VariedadView {
             
-            public function mostrarVariedad($variedad,$titulo){
+            public function mostrarVariedad($variedades,$titulo){
                 
                 $smarty = new Smarty();
-                $smarty->assign('variedad',$variedad);
+                $smarty->assign('variedades',$variedades);
                 $smarty->assign('activeLink',"variedades");
                 $smarty->assign('segundotitulo',$titulo);
                 $smarty->assign('BASE_URL',BASE_URL);
@@ -17,9 +17,26 @@
                 
                 $smarty = new Smarty();
                 $smarty->assign('variedad',$variedad);
-                $smarty->display('../templates/variedad.tpl');  
+                $smarty->display('../templates/addVariedad.tpl');  
         
          }
+         public function AddVariedad($comidas){
+                
+            $smarty = new Smarty();
+            $smarty->assign('comidas',$comidas);
+            $smarty->display('../templates/addVariedad.tpl');  
+    
+        }
+
+        public function editarVariedad($comidas,$variedad){
+                
+            $smarty = new Smarty();
+            $smarty->assign('comidas',$comidas);
+            $smarty->assign('variedad',$variedad);
+            $smarty->display('../templates/editarVariedad.tpl');  
+    
+        }
+ 
   
     }
 ?>

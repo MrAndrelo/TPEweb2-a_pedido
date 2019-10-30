@@ -17,9 +17,9 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         {if isset($activeLink) && ($activeLink == "home")} 
-         <a class="nav-link text-warning" href="">HOME</a>
+         <a class="nav-link text-warning" href="./">HOME</a>
          {else}
-        <a class="nav-link" href="">HOME</a>
+        <a class="nav-link" href="./">HOME</a>
         {/if}
       </li>
       <li class="nav-item">

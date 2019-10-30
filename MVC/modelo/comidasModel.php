@@ -18,6 +18,12 @@ class ComidasModel {
         return $db;
     }
 
+    public function getComida($id_comida){
+        $query = $this->db->prepare( 'SELECT * FROM comida WHERE id_comida=?'); //preparo la consulta
+        $query->execute(array($id_comida)); //ejecuto consulta
+        $comida = $query->fetch(PDO::FETCH_OBJ); //me da la respuesta
+        return $comida;
+    }	
     function getComidas(){
    
         $query = $this->db ->prepare( 'SELECT * FROM comida'); //preparo la consulta

@@ -26,7 +26,7 @@
        
             <p>¿No tenés cuenta?</p>
             
-            <a class="btn btn-primary" href="register">Registrarse</a>
+            <a class="btn btn-warning" href="register">Registrarse</a>
          
     </form>
 

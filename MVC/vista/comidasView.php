@@ -1,6 +1,9 @@
     <?php
         require_once('libs/Smarty.class.php');
         class ComidasView {
+
+
+            
         
             public function showHome (){
          
@@ -32,7 +35,22 @@
         
          }
 
+        public function addComida($titulo){
+            $smarty = new Smarty();
+            $smarty->assign('titulo', $titulo); 
+            $smarty->display('../templates/addComida.tpl');
+        }
         
+        public function editarComida($comida, $titulo){
+                
+            $smarty = new Smarty();
+            $smarty->assign('comida',$comida);
+            $smarty->assign('titulo',$titulo);        
+            $smarty->display('../templates/editarComida.tpl');  
+    
+        }
+ 
+
 
         
     }
