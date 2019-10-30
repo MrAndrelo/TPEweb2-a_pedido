@@ -18,9 +18,10 @@ class variedadControlador {
     
 
     public function getVariedades(){
-       $variedades = $this->variedadModel->getVariedades();  
+       $variedades = $this->variedadModel->getVariedades(); 
+       $comidasFK = $this->comidasModel->getComidas();
        $titulo='VARIEDADES';
-       $this->variedadView->mostrarVariedad($variedades,$titulo);
+       $this->variedadView->mostrarVariedad($variedades,$titulo,$comidasFK);
     }	
 
     public function showAddVariedad() {

@@ -56,6 +56,7 @@ class LoginController {
         $password = $_POST['password'];
         //controlar que el usuario no exista
         $this->userModel->signUpUser($username,$password); 
+        $this->loginView->signUpUser($username);
         header('Location:'. LOGIN);
 
     }
@@ -66,4 +67,11 @@ class LoginController {
         $this->authHelper->logout();
         header('Location: ' . LOGIN);
     }
+
+    public function getUsuario(){
+        $username = $_GET['username'];
+        $this->userModel->getByUsername($username);
+       
+       $this->loginView->showUser($username);
+    }	
 }

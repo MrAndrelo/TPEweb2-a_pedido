@@ -2,12 +2,17 @@
 <div>
   <h1 class="text-center">{$primertitulo}</h1>
 </div>
+{if isset($smarty.session.USER_NAME)} 
 <a class="btn btn-warning" href="addComida">AGREGAR COMIDA</a>
+{/if}
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Comida</th>
+      {if isset($smarty.session.USER_NAME)} 
       <th scope="col">Acciones</th>
+      {/if}
     </tr>
   </thead>
   <tbody>

@@ -18,6 +18,7 @@
         public function mostrarComidas($comidas,$titulo){
             session_start();
             $smarty = new Smarty();
+            $smarty->assign('usuario', $_SESSION['USER_NAME'] );
             $smarty->assign('primertitulo',$titulo);
             $smarty->assign('comidas',$comidas);
             $smarty->assign('activeLink',"comidas");

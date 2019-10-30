@@ -24,7 +24,8 @@ public function getVariedad($id_variedad){
 
 public function getVariedades(){
     $db_connection=$this->connect();
-    $query = $db_connection ->prepare( 'SELECT * FROM variedad'); //preparo la consulta
+    //$query = $db_connection ->prepare( 'SELECT * FROM variedad'); //preparo la consulta
+    $query = $db_connection ->prepare( 'SELECT variedad.*, comida.nombre as nombre_comida FROM variedad INNER JOIN comida ON (variedad.id_comida = comida.id_comida)'); //preparo la consulta
     $ok = $query->execute(); //ejecuto consulta
     if (!$ok) var_dump ($query -> errorinfo()); //chequeo ejecucion
     $variedad = $query->fetchAll(PDO::FETCH_OBJ); //me da la respuesta

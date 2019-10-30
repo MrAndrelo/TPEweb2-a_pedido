@@ -8,19 +8,30 @@ class LoginView {
     public function __construct() {
         $this->smarty = new Smarty();
         $this->smarty->assign('basehref', BASE_URL);
+        
     }
 
     public function showLogin($error = null) {
+        session_start();
+        $smarty->assign('usuario', $_SESSION['USER_NAME'] );
         $this->smarty->assign('titulo', 'Iniciar Sesión');
+        $this->smarty->assign('usuario', $username);
         $this->smarty->assign('error', $error);
         $this->smarty->display('templates/login.tpl');
     }
 
 
     public function showRegister($error = null) {
+        session_start();
         $this->smarty->assign('titulo', 'Registrarse');
         $this->smarty->assign('error', $error);
         $this->smarty->display('templates/register.tpl');
+    }
+
+    public function showUser($username = null) {
+        session_start();
+        $this->smarty->assign('usuario', $username); 
+        $this->smarty->display('templates/header.tpl');
     }
 
 }

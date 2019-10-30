@@ -31,5 +31,5 @@
     </form>
 
 </div>
-</body>
+{* </body> *}
 {include 'templates/footer.tpl'}

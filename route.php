@@ -11,6 +11,7 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
 define("HOME", BASE_URL . '');
 define("VARIEDAD", BASE_URL . 'variedad');
 define("COMIDA", BASE_URL . 'comida');
+define("LOGIN", BASE_URL . 'login');
 
 
 
