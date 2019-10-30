@@ -13,9 +13,8 @@ class LoginView {
 
     public function showLogin($error = null) {
         session_start();
-        $smarty->assign('usuario', $_SESSION['USER_NAME'] );
+        $this->smarty->assign('usuario', $_SESSION['USER_NAME'] );
         $this->smarty->assign('titulo', 'Iniciar Sesión');
-        $this->smarty->assign('usuario', $username);
         $this->smarty->assign('error', $error);
         $this->smarty->display('templates/login.tpl');
     }
