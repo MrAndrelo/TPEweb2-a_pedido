@@ -36,13 +36,13 @@ class LoginController {
 
         
         // encontró un user con el username que mandó, y tiene la misma contraseña
-        if (!empty($user) && password_verify($password,$user->contraseña)) {//NO COMPARA BIEN LAS CONTRASEÑAS
+        if (!empty($user) && password_verify($password,$user->contraseña)) {
             $this->authHelper->login($user);
             session_start();
             //$_SESSION('USER_ID') = $user->id_usuario;
             $_SESSION['USER_NAME'] = $user->nombre;
             
-            header('Location:'. COMIDA);
+            header('Location:'. HOME);
         } else {
             echo $password;
             echo $user->nombre;
@@ -65,7 +65,7 @@ class LoginController {
 
     public function logout() {
         $this->authHelper->logout();
-        header('Location: ' . LOGIN);
+        header('Location: ' . HOME);
     }
 
     public function getUsuario(){

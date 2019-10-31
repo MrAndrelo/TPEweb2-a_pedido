@@ -10,7 +10,7 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
 
 define("HOME", BASE_URL . '');
 define("VARIEDAD", BASE_URL . 'variedad');
-define("COMIDA", BASE_URL . 'comida');
+define("COMIDA", BASE_URL . 'comidas');
 define("LOGIN", BASE_URL . 'login');
 
 
@@ -26,7 +26,7 @@ $r->addRoute("comidas", "GET", "ComidasControlador", "getComidas");
 $r->addRoute("comida/editar/:ID_COMIDA", "POST", "ComidasControlador", "editarComida");
 $r->addRoute("comida/editar/:ID_COMIDA", "GET", "ComidasControlador", "showEditarComida");
 $r->addRoute("comida/borrar/:ID_COMIDA", "GET", "ComidasControlador", "borrarComida");
-$r->addRoute("comida/insertar", "POST", "ComidasControlador", "insertarComida");
+// $r->addRoute("comida/insertar", "POST", "ComidasControlador", "insertarComida");
 $r->addRoute("addComida/insertar", "POST", "ComidasControlador", "insertarComida");
 $r->addRoute("addComida", "GET", "ComidasControlador", "ShowAddComida");
 //usuario

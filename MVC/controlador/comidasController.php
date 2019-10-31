@@ -55,13 +55,12 @@ class ComidasControlador {
         
         $nombre = $_POST ['nombre'];
         if (!empty($nombre)){
-             echo 'sipi' . $nombre . '';
             $this->comidasModel->insertarComida($nombre);
             header('Location: ' . COMIDA);
+            
         }else{
-            echo 'sipi' . $nombre . '';
             echo '<script>alert("no se ha ingresado una categoría")</script>';
-            //header('Location: ' . "../comidas" );
+            header('Location: ' . COMIDA );
             
         }   
     }

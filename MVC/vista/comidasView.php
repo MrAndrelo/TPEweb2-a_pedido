@@ -6,8 +6,9 @@
             
         
             public function showHome (){
-         
+                session_start();
                 $smarty = new Smarty();
+                $smarty->assign('usuario', $_SESSION['USER_NAME'] );
                 $smarty->assign('activeLink',"home");
                 $smarty->assign('BASE_URL',BASE_URL);
                 $smarty->display('../templates/home.tpl');
@@ -28,8 +29,9 @@
         }	
 
         public function getCategoriaNueva($comidas){
-         
+            session_start();
             $smarty = new Smarty();
+            $smarty->assign('usuario', $_SESSION['USER_NAME'] );
             $smarty->assign('comidas',$comidas);
             $smarty->display('../templates/comidas.tpl');
             
@@ -37,14 +39,17 @@
          }
 
         public function addComida($titulo){
+            session_start();
             $smarty = new Smarty();
+            $smarty->assign('usuario', $_SESSION['USER_NAME'] );
             $smarty->assign('titulo', $titulo); 
             $smarty->display('../templates/addComida.tpl');
         }
         
         public function editarComida($comida, $titulo){
-                
+            session_start();
             $smarty = new Smarty();
+            $smarty->assign('usuario', $_SESSION['USER_NAME'] );
             $smarty->assign('comida',$comida);
             $smarty->assign('titulo',$titulo);        
             $smarty->display('../templates/editarComida.tpl');  

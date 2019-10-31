@@ -13,7 +13,7 @@ class LoginView {
 
     public function showLogin($error = null) {
         session_start();
-        $this->smarty->assign('usuario', $_SESSION['USER_NAME'] );
+        // $this->smarty->assign('usuario', $_SESSION['USER_NAME'] );
         $this->smarty->assign('titulo', 'Iniciar Sesión');
         $this->smarty->assign('error', $error);
         $this->smarty->display('templates/login.tpl');
@@ -22,15 +22,19 @@ class LoginView {
 
     public function showRegister($error = null) {
         session_start();
+        var_dump( $_SESSION['USER_NAME']);
+        die();
+        $this->smarty->assign('usuario', $_SESSION['USER_NAME'] );
+
         $this->smarty->assign('titulo', 'Registrarse');
         $this->smarty->assign('error', $error);
         $this->smarty->display('templates/register.tpl');
     }
 
-    public function showUser($username = null) {
-        session_start();
-        $this->smarty->assign('usuario', $username); 
-        $this->smarty->display('templates/header.tpl');
-    }
+    // public function showUser($usuario = null) {
+    //     session_start();
+    //     $this->smarty->assign('usuario', $_SESSION['USER_NAME']); 
+    //     $this->smarty->display('templates/header.tpl');
+    // }
 
 }
