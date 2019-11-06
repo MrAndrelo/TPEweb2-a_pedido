@@ -1,4 +1,4 @@
-{include 'templates/header.tpl'}
+{include 'templates/header_form.tpl'}
 
 
 

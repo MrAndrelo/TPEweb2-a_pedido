@@ -21,10 +21,13 @@
         public function mostrarComidas($comidas,$titulo){
             session_start();
             $smarty = new Smarty();
-            if(empty ($_SESSION['USER_NAME'])){
+            if(empty ($_SESSION['USER_NAME']))
+            {
                 $smarty->assign('usuario', null );
-            }else{
-        $smarty->assign('usuario', $_SESSION['USER_NAME'] );
+            }
+            else
+            {
+                $smarty->assign('usuario', $_SESSION['USER_NAME'] );
             }
             $smarty->assign('primertitulo',$titulo);
             $smarty->assign('comidas',$comidas);
@@ -37,10 +40,13 @@
         public function getCategoriaNueva($comidas){
             session_start();
             $smarty = new Smarty();
-            if(empty ($_SESSION['USER_NAME'])){
+            if(empty ($_SESSION['USER_NAME']))
+            {
                 $smarty->assign('usuario', null );
-            }else{
-        $smarty->assign('usuario', $_SESSION['USER_NAME'] );
+            }
+            else
+            {
+                $smarty->assign('usuario', $_SESSION['USER_NAME'] );
             }
             $smarty->assign('comidas',$comidas);
             $smarty->display('../templates/comidas.tpl');

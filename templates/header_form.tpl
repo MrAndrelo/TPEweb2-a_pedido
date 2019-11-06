@@ -14,30 +14,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        {if isset($activeLink) && ($activeLink == "home")} 
-         <a class="nav-link text-warning" href="./">HOME</a>
-         {else}
-        <a class="nav-link" href="./">HOME</a>
-        {/if}
-      </li>
-      <li class="nav-item">
-              {if isset($activeLink) && ($activeLink == "comidas")} 
-         <a class="nav-link text-warning" href="comidas">COMIDAS</a>
-         {else}
-        <a class="nav-link" href="comidas">COMIDAS</a>
-                {/if}
-      </li>
-      <li class="nav-item">
-        {if isset($activeLink) && ($activeLink == "variedad")} 
-                <a class="nav-link text-warning" href="variedad">VARIEDADES</a>
-                {else}
-                <a class="nav-link" href="variedad">VARIEDADES</a>
-        {/if}
-      </li>
-    </ul>
+ 
        <ul class="navbar-nav mr-auto">
        <li class="nav-item text-warning font-weight-bold">MORFY</li>
        </ul>

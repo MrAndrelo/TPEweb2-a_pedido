@@ -1,5 +1,5 @@
 
-{include 'templates/header.tpl'}
+{include 'templates/header_form.tpl'}
 <h1>{$titulo}</h1>
 <form action="" method="POST" class="col-md-4 offset-md-4 mt-4">
     <div class="form-group">

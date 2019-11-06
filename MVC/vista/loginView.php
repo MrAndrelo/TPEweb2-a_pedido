@@ -1,17 +1,19 @@
 <?php
 require_once('libs/Smarty.class.php');
 
-class LoginView {
+class LoginView
+{
 
     private $smarty;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->smarty = new Smarty();
         $this->smarty->assign('basehref', BASE_URL);
-        
     }
 
-    public function showLogin($error = null) {
+    public function showLogin($error = null)
+    {
         session_start();
         // $this->smarty->assign('usuario', $_SESSION['USER_NAME'] );
         $this->smarty->assign('titulo', 'Iniciar Sesión');
@@ -20,11 +22,12 @@ class LoginView {
     }
 
 
-    public function showRegister($error = null) {
+    public function showRegister($error = null)
+    {
         session_start();
-        var_dump( $_SESSION['USER_NAME']);
-        die();
-        $this->smarty->assign('usuario', $_SESSION['USER_NAME'] );
+        // var_dump( $_SESSION['USER_NAME']);
+        // die();
+        $this->smarty->assign('usuario', $_SESSION['USER_NAME']);
 
         $this->smarty->assign('titulo', 'Registrarse');
         $this->smarty->assign('error', $error);

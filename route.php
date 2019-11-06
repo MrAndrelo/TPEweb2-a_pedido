@@ -15,6 +15,7 @@ define("LOGIN", BASE_URL . 'login');
 
 
 
+
 $r = new Router();
 
 
@@ -27,8 +28,8 @@ $r->addRoute("comida/editar/:ID_COMIDA", "POST", "ComidasControlador", "editarCo
 $r->addRoute("comida/editar/:ID_COMIDA", "GET", "ComidasControlador", "showEditarComida");
 $r->addRoute("comida/borrar/:ID_COMIDA", "GET", "ComidasControlador", "borrarComida");
 // $r->addRoute("comida/insertar", "POST", "ComidasControlador", "insertarComida");
-$r->addRoute("addComida/insertar", "POST", "ComidasControlador", "insertarComida");
-$r->addRoute("addComida", "GET", "ComidasControlador", "ShowAddComida");
+$r->addRoute("comida/insertar", "POST", "ComidasControlador", "insertarComida");
+$r->addRoute("comida/insertar", "GET", "ComidasControlador", "ShowAddComida");
 //usuario
 $r->addRoute("logout", "GET", "LoginController", "logout");
 $r->addRoute("login","POST","LoginController","verifyUser");

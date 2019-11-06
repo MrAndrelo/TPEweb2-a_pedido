@@ -59,8 +59,10 @@ class ComidasControlador {
             header('Location: ' . COMIDA);
             
         }else{
-            echo '<script>alert("no se ha ingresado una categoría")</script>';
-            header('Location: ' . COMIDA );
+            echo '<script>alert("no se ha ingresado una categoría");
+            window.location.href="../addComida"</script>';
+            
+            // header('Location: ' . COMIDA );
             
         }   
     }

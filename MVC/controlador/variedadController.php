@@ -48,6 +48,7 @@ class variedadControlador {
         }else{
              
             echo '<script>alert("no se ha ingresado una variedad")</script>';
+            header('Location: ' . VARIEDAD );
 
         }   
     }

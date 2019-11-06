@@ -3,7 +3,7 @@
   <h1 class="text-center">{$primertitulo}</h1>
 </div>
 {if isset($smarty.session.USER_NAME)} 
-<a class="btn btn-warning" href="addComida">AGREGAR COMIDA</a>
+<a class="btn btn-warning" href="comida/insertar">AGREGAR COMIDA</a>
 {/if}
 
 <table class="table">
