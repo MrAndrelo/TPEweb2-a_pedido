@@ -5,7 +5,7 @@ require_once "./MVC/controlador/userController.php"; //importa el archivo que ti
 require_once "Router.php";
 
 $action = $_GET["action"]; //
-define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
+define("BASE_URL", 'http://' . $_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"] . dirname($_SERVER["PHP_SELF"]) . '/');
 //define("BASE_URL", 'http://'.$_SERVER["db_a_pedido"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 
 define("HOME", BASE_URL . '');
@@ -32,10 +32,10 @@ $r->addRoute("comida/insertar", "POST", "ComidasControlador", "insertarComida");
 $r->addRoute("comida/insertar", "GET", "ComidasControlador", "ShowAddComida");
 //usuario
 $r->addRoute("logout", "GET", "LoginController", "logout");
-$r->addRoute("login","POST","LoginController","verifyUser");
-$r->addRoute("login","GET","LoginController","showLogin");
-$r->addRoute("register","POST","LoginController","signUpUser");
-$r->addRoute("register","GET","LoginController","showRegister");
+$r->addRoute("login", "POST", "LoginController", "verifyUser");
+$r->addRoute("login", "GET", "LoginController", "showLogin");
+$r->addRoute("register", "POST", "LoginController", "signUpUser");
+$r->addRoute("register", "GET", "LoginController", "showRegister");
 //variedades
 $r->addRoute("variedad", "GET", "variedadControlador", "getVariedades");
 $r->addRoute("variedad/editar/:ID_VARIEDAD", "GET", "variedadControlador", "showEditarVariedad");

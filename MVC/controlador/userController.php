@@ -6,43 +6,48 @@ include_once('./helpers/authHelper.php');
 
 
 
-class LoginController {
+class LoginController
+{
 
     private $loginView;
     private $userModel;
     private $authHelper;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->loginView = new LoginView();
         $this->userModel = new UserModel();
         $this->authHelper = new AuthHelper();
     }
 
-    public function showLogin() {
+    public function showLogin()
+    {
         $this->loginView->showLogin();
     }
 
 
-    public function showRegister() {
+    public function showRegister()
+    {
         $this->loginView->showRegister();
     }
 
 
-    public function verifyUser() {
+    public function verifyUser()
+    {
         $username = $_POST['username'];
         $password = $_POST['password'];
         $user = $this->userModel->getByUsername($username);
         //$hash = password_hash($password, md5);
 
-        
+
         // encontró un user con el username que mandó, y tiene la misma contraseña
-        if (!empty($user) && password_verify($password,$user->contraseña)) {
+        if (!empty($user) && password_verify($password, $user->contraseña)) {
             $this->authHelper->login($user);
             session_start();
             //$_SESSION('USER_ID') = $user->id_usuario;
             $_SESSION['USER_NAME'] = $user->nombre;
-            
-            header('Location:'. HOME);
+
+            header('Location:' . HOME);
         } else {
             echo $password;
             echo $user->nombre;
@@ -51,27 +56,28 @@ class LoginController {
     }
 
 
-    public function signUpUser() {
+    public function signUpUser()
+    {
         $username = $_POST['username'];
         $password = $_POST['password'];
         //controlar que el usuario no exista
-        $this->userModel->signUpUser($username,$password); 
-        $this->loginView->signUpUser($username);
-        header('Location:'. LOGIN);
-
+        $this->userModel->signUpUser($username, $password);
+        header('Location:' . LOGIN);
     }
 
 
 
-    public function logout() {
+    public function logout()
+    {
         $this->authHelper->logout();
         header('Location: ' . HOME);
     }
 
-    public function getUsuario(){
+    public function getUsuario()
+    {
         $username = $_GET['username'];
         $this->userModel->getByUsername($username);
-       
-       $this->loginView->showUser($username);
-    }	
+
+        $this->loginView->showUser($username);
+    }
 }
