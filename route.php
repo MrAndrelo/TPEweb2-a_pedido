@@ -20,14 +20,12 @@ $r = new Router();
 
 
 // rutas
-// $r->addRoute("login", "GET", "LoginController", "showLogin");
-// $r->addRoute("verify", "POST", "LoginController", "verifyUser");
+
 //comidas
 $r->addRoute("comidas", "GET", "ComidasControlador", "getComidas");
 $r->addRoute("comida/editar/:ID_COMIDA", "POST", "ComidasControlador", "editarComida");
 $r->addRoute("comida/editar/:ID_COMIDA", "GET", "ComidasControlador", "showEditarComida");
 $r->addRoute("comida/borrar/:ID_COMIDA", "GET", "ComidasControlador", "borrarComida");
-// $r->addRoute("comida/insertar", "POST", "ComidasControlador", "insertarComida");
 $r->addRoute("comida/insertar", "POST", "ComidasControlador", "insertarComida");
 $r->addRoute("comida/insertar", "GET", "ComidasControlador", "ShowAddComida");
 //usuario
