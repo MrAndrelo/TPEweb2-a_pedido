@@ -45,6 +45,7 @@ class variedadModel
         foreach ($variedades as $variedad) {
             $html .= "<li> {$variedad->nombre} </li>";
             $html .= "<li> {$variedad->ingredientes} </li>";
+            $html .= "<li> {$variedad->imagen} </li>";
         }
         $html .= "</ul>";
         echo $html;
@@ -64,7 +65,7 @@ class variedadModel
 
     public function moveFile($imagen)
     {
-        $filepath = "src/images/" . uniqid() . "." . strtolower(pathinfo($_FILES['imagen']['tmp_name'], PATHINFO_EXTENSION)) . ;
+        $filepath = "src/images/" . uniqid() . "." . strtolower(pathinfo($_FILES['imagen']['tmp_name'], PATHINFO_EXTENSION));
         move_uploaded_file($imagen['tmp_name'], $filepath);
         return $filepath;
     }
@@ -81,3 +82,6 @@ class variedadModel
         $sentencia->execute(array($id_variedad));
     }
 };
+
+
+// $img->setImageFormat('png');
