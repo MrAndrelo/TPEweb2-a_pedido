@@ -18,6 +18,7 @@
     <tr>
       <th scope="col">Nombre</th>
       <th scope="col">Ingredientes</th>
+      <th scope="col">imagen</th>
       <th scope="col">pertenece a...</th>
       {if isset($smarty.session.USER_NAME)}
       <th scope="col">Acciones</th>
@@ -29,6 +30,7 @@
   <tr>
     <td scope="row"> {$variedad->nombre}</td>
     <td scope="row">{$variedad->ingredientes}</td>
+    <td scope="row"><img width=90px src="{$variedad->imagen}"</td>
     <td scope="row">{$variedad->nombre_comida}</td>
     {if isset($smarty.session.USER_NAME)}
     <td>

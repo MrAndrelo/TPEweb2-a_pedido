@@ -15,7 +15,7 @@
 
 
 
-<form action="" method="POST" class="col-md-4 offset-md-4 mt-4">
+<form action="" method="POST" class="col-md-4 offset-md-4 mt-4" >
  
     <div class="form-group">
       <label for="inputState">comidas</label>
