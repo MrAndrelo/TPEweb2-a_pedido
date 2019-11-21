@@ -6,24 +6,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <base href={BASE_URL}>
     <title>A Pedido</title>
-    <base href={'$BASE_URL'} >
         {* session_start(); *}
 </head>
 
 <body class="container">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        {if isset($activeLink) && ($activeLink == "home")} 
-         <a class="nav-link text-warning" href="./">HOME</a>
-         {else}
-        <a class="nav-link" href="./">HOME</a>
-        {/if}
-      </li>
       <li class="nav-item">
               {if isset($activeLink) && ($activeLink == "comidas")} 
          <a class="nav-link text-warning" href="comidas">COMIDAS</a>
@@ -40,12 +33,12 @@
       </li>
     </ul>
        <ul class="navbar-nav mr-auto">
-       <img src="./img/rotify_logo_header2.png" />
-       {* <style> .Rotify {
-        font-family: 'Pacifico', cursive;
-        font-size:2em;
-        }</style>
-       <li class="nav-item text-warning font-weight-bold Rotify">Rotify</li> *}
+            {if isset($activeLink) && ($activeLink == "home")}
+        <li class="nav-item"> <a href=''> <img class="bg-light" src="img/rotify_logo_header.svg"
+              style="border-radius: 100%;" /></a></li>
+        {else}
+        <li class="nav-item"> <a href=''> <img src="./img/rotify_logo_header.svg" /></a></li>
+        {/if}
        </ul>
     <ul class="navbar-nav my-2 my-lg-2">
               {if isset($smarty.session.USER_NAME)}  

@@ -5,22 +5,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <base href={BASE_URL}>
     <title>A Pedido</title>
-    <base href={'$BASE_URL'} >
         {* session_start(); *}
 </head>
 
 <body class="container">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
  
        <ul class="navbar-nav mr-auto">
-        <style> .Rotify {
-        font-family: 'Pacifico', cursive;
-        font-size:2em;
-        }</style>
-       <li class="nav-item text-warning font-weight-bold Rotify">Rotify</li>
+        <li class="nav-item"> <a href=""> <img src="img/rotify_logo_header.svg" /></a></li>
        </ul>
     <ul class="navbar-nav my-2 my-lg-2">
               {if isset($smarty.session.USER_NAME)}  
