@@ -65,7 +65,7 @@ class variedadModel
 
     public function moveFile($imagen)
     {
-        $filepath = "src/images/" . uniqid() . "." . strtolower(pathinfo($_FILES['imagen']['tmp_name'], PATHINFO_EXTENSION));
+    $filepath = "src/images/" . uniqid() . ".png"  /* . strtolower(pathinfo($_FILES['imagen']['tmp_name'], PATHINFO_EXTENSION))*/;
         move_uploaded_file($imagen['tmp_name'], $filepath);
         return $filepath;
     }
